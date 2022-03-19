@@ -12,11 +12,11 @@ iconBtn.addEventListener('click', (e)=>{
   if (isToggle) {
     svgOpen.classList.remove('hidden')
     svgExit.classList.add('hidden')
-    mobileMenu.classList.remove('hidden')
+    mobileMenu.classList.add('hidden')
   }else {
     svgOpen.classList.add('hidden')
     svgExit.classList.remove('hidden')
-    mobileMenu.classList.add('hidden')
+    mobileMenu.classList.remove('hidden')
   }
 })
 
