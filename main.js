@@ -1,4 +1,4 @@
-import './tailwind.css'
+import './src/tailwind.css'
 
 const iconBtn = document.querySelector('[aria-controls=mobile-menu]')
 const mobileMenu = document.querySelector('#mobile-menu')
@@ -18,5 +18,18 @@ iconBtn.addEventListener('click', (e)=>{
     svgExit.classList.remove('hidden')
     mobileMenu.classList.add('hidden')
   }
-  
+})
+
+
+import {router} from './src/router/index.routes'
+// Routas
+window.addEventListener('hashchange', ()=>{
+  router(window.location.hash)
+})
+
+window.addEventListener('load', (e)=>{
+  if (window.location.pathname == '/' && window.location.hash == '') 
+    router('#/')
+  else 
+    router(window.location.hash)
 })

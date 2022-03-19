@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="src/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <title>SPA Examples</title>
 </head>
 
 <body>
@@ -42,17 +42,17 @@
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#D" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+              <a href="#/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                 aria-current="page">Dashboard</a>
 
-              <a href="#T"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+              <a href="#/contador"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contador</a>
 
-              <a href="#P"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+              <a href="#/background"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Background</a>
 
-              <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+              <a href="#/formulario"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Formulario</a>
             </div>
           </div>
         </div>
@@ -67,29 +67,23 @@
           aria-current="page">Dashboard</a>
 
         <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contador</a>
 
         <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Background</a>
 
         <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Formulario</a>
       </div>
     </div>
   </nav>
 
 
   <!-- body -->
-  <div class="container w-full font-extrabold py-40">
-    <div class="text-7xl sm:text-9xl text-center">
-      <span class="block bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-        Mini Practicas
-      </span>
-      <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500"><a href="https://github.com/jesuj" target="_blank">jesuj</a></span>
-    </div>
-  </div>
+  <main id="root">
+  </main>
 
-  <script type="module" src="/main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
