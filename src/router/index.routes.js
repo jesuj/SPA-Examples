@@ -12,6 +12,11 @@ export const router = (route) => {
             app.appendChild(pages.contador.createContador())
             pages.contador.eventContador();
             break;
+        case '#/background':
+            document.body.style.backgroundColor = '#1f2937'
+            app.appendChild(pages.background.createBackground())
+            pages.background.eventBackground();
+            break;
         default:
             break;
     }
