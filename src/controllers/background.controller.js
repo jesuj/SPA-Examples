@@ -28,7 +28,8 @@ const eventBackground = () => {
         blue.nextElementSibling.textContent = `${b}`
         border.nextElementSibling.textContent = `${borderValue}`
 
-        document.body.style.backgroundColor = `rgb(${r},${g},${b})`
+        // document.body.style.backgroundColor = `rgb(${r},${g},${b})`
+        box.style.backgroundColor = `rgb(${r},${g},${b})`
         p.textContent = `rgb(${r}, ${g}, ${b})`
         colors.value = `#${ColorToHex(r) + ColorToHex(g) + ColorToHex(g)}`
         box.style.borderWidth = `${borderValue}px`
