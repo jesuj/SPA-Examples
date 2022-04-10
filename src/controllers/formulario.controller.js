@@ -16,7 +16,10 @@ function editarFormaulario(id){
 
 const eventFormulario = (id,type) => {
     const form = document.querySelector("form");
-
+    const audioAll = document.querySelectorAll('#audio');
+    audioAll.forEach(item =>{
+        item.addEventListener('click', ejecutarSpeechAPI)
+    })
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -62,6 +65,33 @@ const eventFormulario = (id,type) => {
             }
         }, 3000);
     });
+}
+
+function ejecutarSpeechAPI(e){
+    const SpeechRecognition = webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    const inputItem = this.previousElementSibling;
+    const [microfono,noMicrofono] = this.querySelectorAll('svg');
+
+    recognition.start();
+
+    recognition.onstart=function(){
+        microfono.classList.add('hidden');
+        noMicrofono.classList.remove('hidden');
+    }
+
+    recognition.onspeechend = function(){
+        noMicrofono.classList.add('hidden');
+        microfono.classList.remove('hidden');
+        recognition.stop;
+    }
+
+    recognition.onresult = function(e){
+        const {confidence,transcript}=e.results[0][0];
+        // console.log(confidence,transcript);
+        inputItem.value = transcript; 
+        inputItem.focus()
+    }
 }
 
 function mensaje(mensaje, tipo) {
