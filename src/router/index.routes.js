@@ -28,6 +28,10 @@ export const router = (route) => {
             app.appendChild(pages.cliente.createListarClientes())
             pages.cliente.eventListarClientes();
             break;
+        case '#/clima':
+            app.appendChild(pages.clima.createClima())
+            pages.clima.eventClima();
+            break;
         default:
             break;
     }

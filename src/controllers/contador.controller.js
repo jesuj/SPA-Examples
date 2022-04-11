@@ -2,7 +2,7 @@ import contador from '../views/contador.html?raw'
 
 const createContador = () => {
     const divElement = document.createElement('div')
-    divElement.classList.add('bg-gray-800', 'h-screen')
+    divElement.classList.add('bg-gray-800')
     divElement.innerHTML = contador;
     return divElement;
 }

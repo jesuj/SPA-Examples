@@ -1,0 +1,28 @@
+<div class="container mx-auto">
+    <h1 class="text-2xl md:text-4xl mt-5 text-primary-500 font-bold uppercase text-center">Buscador de el CLima</h1>
+    <div class="max-w-lg mx-auto">
+        <div id="resultado">
+            <p class="text-center text-white mt-6 maxw">Agrega tu ciudad y pais, el resultado se mostrara aqui</p>
+        </div>
+    </div>
+    <form id="formulario" class="mt-10 max-w-lg mx-auto">
+        <div class="mt-5">
+            <input type="text" name="ciudad" id="ciudad" placeholder="Escribe tu ciudad" class="w-full p-2 rounded">
+        </div>
+        <div class="mt-5">
+            <select name="pais" id="pais"
+                class="block w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                <option disabled selected value="">-- Seleccione --</option>
+                <option value="AR">Argentina</option>
+                <option value="BO">Bolivia</option>
+                <option value="CO">Colombia</option>
+                <option value="CR">Costa Rica</option>
+                <option value="ES">España</option>
+                <option value="US">Estados Unidos</option>
+                <option value="MX">México</option>
+                <option value="PE">Perú</option>
+            </select>
+        </div>
+        <input type="submit" class="mt-5 w-full bg-yellow-500 p-3 uppercase font-bold cursor-pointer rounded">
+    </form>
+</div>
