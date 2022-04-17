@@ -1,5 +1,7 @@
 import clima from '../views/clima.html?raw';
 
+const appId = import.meta.env.VITE_KEY_WEATHER_DATA;
+
 const createClima = () => {
     const divElement = document.createElement('div')
     divElement.classList.add('bg-gray-800',)
@@ -9,6 +11,7 @@ const createClima = () => {
 
 const eventClima = () => {
     const form = document.querySelector("form");
+    const btnUbicacion = document.querySelector("#ubicacionActual");
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         const formData = new FormData(this);
@@ -18,14 +21,27 @@ const eventClima = () => {
             mostrarError('Ambos campos son obligatorios', this)
             return;
         } else {
-            consultarAPI(ciudad, pais, this)
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`
+            consultarAPI(url, this)
+        }
+    })
+    btnUbicacion.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(posicion => {
+                const { latitude, longitude } = posicion.coords;
+                const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${appId}`
+                consultarAPI(url, form)
+            }, err => {
+                mostrarError('Dar Permiso de Ubicacion', form)
+            })
+        } else {
+            mostrarError('No tiene geolocation en su Navegador', form)
         }
     })
 }
 
-function consultarAPI(ciudad, pais, container) {
-    const appId = '5a814fcb9ecc08eeb778a4821085b2ec';
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`
+function consultarAPI(url, container) {
     fetch(url)
         .then(resp => resp.json())
         .then(data => {
@@ -43,7 +59,6 @@ function KelvinACentigrados(grados) {
 }
 
 function mostrarClima(datos) {
-    console.log(datos)
     const resultado = document.querySelector('#resultado');
     // Formatear el Clima...
 
