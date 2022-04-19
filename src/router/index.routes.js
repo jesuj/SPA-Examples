@@ -32,6 +32,10 @@ export const router = (route) => {
             app.appendChild(pages.clima.createClima())
             pages.clima.eventClima();
             break;
+        case '#/qr':
+            app.appendChild(pages.qr.createQR())
+            pages.qr.eventQR();
+            break;
         default:
             break;
     }
